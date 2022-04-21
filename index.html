@@ -28,14 +28,14 @@
 				goalper = Math.ceil(goalper*100) / 100;
 				gabper = Math.ceil(gabper*100) / 100;
 				
-                alert(  "1차매수    : " + v2 + "\n" 
-					  + "2차매수    : " + center_1 + "\n"
-					  + "3차매수    : " + center + "\n"
-					  + "4차매수    : " + center_2 + "\n"
-					  + "5차매수    : " + v1 + "\n"
-					  + "목표가     : " + goalprice + "\n" 
-					  + "목표수익률  : " + goalper + "%" + "\n"
-					  + "한칸수익률  : " + gabper + "%");
+				document.getElementById("resulttext").value =    "1차매수    : " + v2 + "\n" 
+							  + "2차매수    : " + center_1 + "\n"
+							  + "3차매수    : " + center + "\n"
+							  + "4차매수    : " + center_2 + "\n"
+							  + "5차매수    : " + v1 + "\n"
+							  + "목표가     : " + goalprice + "\n" 
+							  + "목표수익률  : " + goalper + "%" + "\n"
+							  + "한칸수익률  : " + gabper + "%";
             }
         </script>
         <!-- 추가된 부분 끝 -->
@@ -47,6 +47,10 @@
 		  transform: translate(-50%, -50%); text-align: center;
 		  background: white;
 		}
+		textarea {
+			width: 300px;
+			height: 200px;
+		  }
 		</style>
 	
 	<body>	
@@ -55,7 +59,8 @@
 			<input type="text" id="v1"><br><br>
 			박스상단값: 
 			<input type="text" id="v2"><br><br>
-			<input type="button" value="계산하기" onclick="cal()">
+			<input type="button" value="계산하기" onclick="cal()"><br><br><br>
+			<textarea id="resulttext">  </textarea>
 		</div>
     </body>
 </html>
