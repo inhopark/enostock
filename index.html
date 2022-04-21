@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>간단한 계산기</title>
+        <!-- 추가된 부분 시작 -->
+        <script>
+            // 계산하기 함수 선언
+            function cal()
+			{
+				var v1 = Number(document.getElementById("v1").value);
+				var v2 = Number(document.getElementById("v2").value);
+				var center   = (v1 + v2)/2
+				var center_1 = (v2 + center)/2
+				var center_2 = (v1 + center)/2
+				var goalprice = (v2 - v1) + v2;
+				
+				var goalper = ((goalprice - v2) / v2)*100;
+				var gabper = ((v2 - center_1) / center_1)*100;
+				
+				v1 = v1.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+				v2 = v2.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+				center = center.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+				center_1 = center_1.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+				center_2 = center_2.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+				goalprice = goalprice.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+				
+				goalper = Math.ceil(goalper*100) / 100;
+				gabper = Math.ceil(gabper*100) / 100;
+				
+                alert(  "1차매수    : " + v2 + "\n" 
+					  + "2차매수    : " + center_1 + "\n"
+					  + "3차매수    : " + center + "\n"
+					  + "4차매수    : " + center_2 + "\n"
+					  + "5차매수    : " + v1 + "\n"
+					  + "목표가     : " + goalprice + "\n" 
+					  + "목표수익률  : " + goalper + "%" + "\n"
+					  + "한칸수익률  : " + gabper + "%");
+            }
+        </script>
+        <!-- 추가된 부분 끝 -->
+    </head>
+    <body>
+        박스하단값: 
+        <input type="text" id="v1"><br>
+        박스상단값: 
+        <input type="text" id="v2"><br>
+        <input type="button" value="계산하기" onclick="cal()">
+    </body>
+</html>
