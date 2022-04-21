@@ -40,11 +40,22 @@
         </script>
         <!-- 추가된 부분 끝 -->
     </head>
-    <body>
-        박스하단값: 
-        <input type="text" id="v1"><br>
-        박스상단값: 
-        <input type="text" id="v2"><br>
-        <input type="button" value="계산하기" onclick="cal()">
+     
+		<style>
+		.middle {
+		  position: absolute; left: 50%; top: 50%; 
+		  transform: translate(-50%, -50%); text-align: center;
+		  background: white;
+		}
+		</style>
+	
+	<body>	
+		<div class="middle">
+			박스하단값: 
+			<input type="text" id="v1"><br><br>
+			박스상단값: 
+			<input type="text" id="v2"><br><br>
+			<input type="button" value="계산하기" onclick="cal()">
+		</div>
     </body>
 </html>
